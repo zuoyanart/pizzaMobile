@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="import" href="/widget/meta/meta.html?__inline">
+  <title>segmented control</title>
+</head>
+
+<body>
+
+  <!-- Make sure all your bars are the first things in your <body> -->
+  <header class="bar bar-nav">
+     <button class="btn btn-nav pull-left goback">Left</button>
+     <button class="btn btn-nav pull-right">Right</button>
+     <div class="segmented-control">
+       <a href="" class="control-item active">one</a>
+       <a href="" class="control-item">two</a>
+       <a href="" class="control-item">three</a>
+       <a href="" class="control-item">four</a>
+     </div>
+  </header>
+  <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+  <div class="content">
+    <br>
+    <p>标题栏也可以提供分段控件，可以任意添加按钮到分段控件中去，控件会自适应布局。.btn-nav使按钮更靠近视区的边缘。</p>
+  </div>
+  <link rel="import" href="/widget/footdata/footdata.html?__inline">
+</body>
+
+</html>
