@@ -18,6 +18,10 @@ var pm = (function() {
       goBack();
     });
 
+    $(".tran").on("click", function() {
+        trans();
+    })
+
 
   };
 
@@ -30,6 +34,19 @@ var pm = (function() {
    */
   function goBack() {
     window.history.back();
+  }
+
+  /**
+   * 动画效果
+   * @return {[type]} [description]
+   */
+  function trans() {
+      //加载层
+    layer.open({
+        type: 2,
+        style: 'background-color:#000;'
+    });
+
   }
 
 
