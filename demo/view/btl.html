@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="utf-8">
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Include the compiled Ratchet CSS -->
+    <!-- Include the compiled Ratchet JS -->
+
+  <title>pizzaMobile 示例</title>
+
+    <link rel="stylesheet" href="/css/pizzaMobile.css" />
+</head>
+
+<body>
+
+  <!-- Make sure all your bars are the first things in your <body> -->
+  <header class="bar bar-nav">
+     <a class="icon icon-left-nav pull-left goback"></a>
+    <h1 class="title">标题栏</h1>
+  </header>
+  <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+  <div class="content">
+
+  </div>
+
+
+<script src="/pkg/base.js"></script>
+<script>/*resourcemap*/
+</script>
+<script src="/lib/zepto.min.js"></script>
+<script src="/lib/pm.js"></script>
+<script>
+  pm.init();
+</script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.1.43:8132/livereload.js"></script></body>
+
+</html>
