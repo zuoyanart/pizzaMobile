@@ -18,6 +18,10 @@ var pm = (function() {
       goBack();
     });
 
+    $(".trans").on("click", function() {
+        trans();
+    })
+
 
   };
 
@@ -31,12 +35,15 @@ var pm = (function() {
   function goBack() {
     window.history.back();
   }
+
   /**
    * 动画效果
    * @return {[type]} [description]
    */
   function trans() {
-      var s = '<div><img src="http://img.xker.com/xkerfiles/allimg/1504/2232502a1-12.gif" /></div>'
+    layer.open({
+        type: 2
+    });
   }
 
 

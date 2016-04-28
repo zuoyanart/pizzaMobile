@@ -15,6 +15,9 @@ fis.hook('commonjs', {
 fis.match("**/*", {
         release: '${statics}/$&'
     })
+    .match(/.*\.(png|jpg)$/, {
+      optimizer: fis.plugin('png-compressor')
+    })
     .match("**/*.ejs", {
         parser: fis.plugin('ejs'),
         isJsLike: true,
@@ -81,7 +84,7 @@ fis.match('::packager', {
     }),
     packager: fis.plugin('map', {
         useTrack: false,
-        'pkg/base.js': ['/lib/mod.js']
+        'pkg/base.js': ['/lib/mod.js','/lib/zepto.min.js', '/lib/touch.js']
     }),
     spriter: fis.plugin('csssprites', {
         layout: 'matrix',

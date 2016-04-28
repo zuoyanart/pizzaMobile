@@ -18,7 +18,7 @@ var pm = (function() {
       goBack();
     });
 
-    $(".tran").on("click", function() {
+    $(".trans").on("click", function() {
         trans();
     })
 
@@ -41,12 +41,9 @@ var pm = (function() {
    * @return {[type]} [description]
    */
   function trans() {
-      //加载层
     layer.open({
-        type: 2,
-        style: 'background-color:#000;'
+        type: 2
     });
-
   }
 
 
