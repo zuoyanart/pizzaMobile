@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="utf-8">
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Include the compiled Ratchet CSS -->
+    <!-- Include the compiled Ratchet JS -->  <title>pizzaMobile 示例</title>
+
+    <link rel="stylesheet" href="/lib/layer/need/layer.css" />
+    <link rel="stylesheet" href="/css/pizzaMobile.css" />
+    <link rel="stylesheet" href="/site/tupianchoose/tupianchoose.css" />
+</head>
+
+<body>
+
+  <!-- Make sure all your bars are the first things in your <body> -->
+  <header class="bar bar-nav">
+     <h1 class="title">标题栏</h1>
+  </header>
+  <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+  <div class="content">
+      <span class="imgmail"></span>
+      <span class="imgdownload"></span>
+      <div class="content-padded">
+        在DPR为1和2的时候显示红色图，3显示绿色图，为了保证最大兼容性：background-size:contain;<br>
+        <br>如果使用雪碧：2x图片必须是1x图片的精确2倍，包括间隙。不需要写background-size,浏览器会自动处理。backgorund-positon只需写一遍，相对位置按照1x图来写即可</div>
+  </div>
+
+
+<script src="/pkg/base.js"></script>
+<script>/*resourcemap*/
+</script>
+<script src="/lib/layer/layer.js"></script>
+<script src="/lib/pm.js"></script>
+<script src="/lib/pm.toggle.js"></script>
+<script>
+  pm.init();
+</script>
+<script type="text/javascript" charset="utf-8" src="http://192.168.1.43:8132/livereload.js"></script></body>
+
+</html>

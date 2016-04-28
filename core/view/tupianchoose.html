@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="import" href="/widget/meta/meta.html?__inline">
+  <link rel="stylesheet" href="/site/tupianchoose/tupianchoose.css">
+  <title>pizzaMobile 示例</title>
+</head>
+
+<body>
+
+  <!-- Make sure all your bars are the first things in your <body> -->
+  <header class="bar bar-nav">
+     <h1 class="title">标题栏</h1>
+  </header>
+  <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+  <div class="content">
+      <span class="imgmail"></span>
+      <span class="imgdownload"></span>
+      <div class="content-padded">
+        在DPR为1和2的时候显示红色图，3显示绿色图，为了保证最大兼容性：background-size:contain;<br>
+        <br>如果使用雪碧：2x图片必须是1x图片的精确2倍，包括间隙。不需要写background-size,浏览器会自动处理。backgorund-positon只需写一遍，相对位置按照1x图来写即可</div>
+  </div>
+  <link rel="import" href="/widget/footdata/footdata.html?__inline">
+</body>
+
+</html>

@@ -88,6 +88,6 @@ fis.match('::packager', {
     }),
     spriter: fis.plugin('csssprites', {
         layout: 'matrix',
-        margin: '15'
+        margin: '3'
     })
 });

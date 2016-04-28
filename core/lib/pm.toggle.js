@@ -15,7 +15,7 @@ var pm = (function(self) {
   self.toggle = function(elem, selector, cb) {
       if (typeof(selector) == "function") {
         cb = selector;
-        $(elem).on('swipeLeft', function() {
+        $(elem).on('swipeLeft', function(event) {
           if (toggleDefOper("left", $(this))) {
             cb($(this), "left");
           }
