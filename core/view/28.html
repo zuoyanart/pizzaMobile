@@ -18,21 +18,26 @@
         <h1 class="title">标题栏</h1>
     </header>
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-    <div class="content" style="padding-left:0px;">
-        <div style="padding:20px;">
-        
-        <button class="btn btn-block">Block button</button>
-        <button class="btn btn-primary btn-block">Block button</button>
-        <button class="btn btn-positive btn-block">Block button</button>
-        <button class="btn btn-negative btn-block">Block button</button>
-
-        <button class="btn btn-block btn-outlined">Block button</button>
-        <button class="btn btn-primary btn-block btn-outlined">Block button</button>
-        <button class="btn btn-positive btn-block btn-outlined">Block button</button>
-        <button class="btn btn-negative btn-block btn-outlined">Block button</button>
+    <div class="content">
+        <div style="padding:1rem;">
+          <div class="toggle active">
+              <div class="toggle-handle"></div>
+          </div>
+          <br>
+          <div class="toggle">
+              <div class="toggle-handle"></div>
+          </div>
         </div>
     </div>
     <link rel="import" href="/widget/footdata/footdata.html?__inline">
+    <script>
+      pm.toggle(".toggle", function(obj, target) {
+        layer.open({
+          content:target,
+          time:1
+        });
+      });
+    </script>
 </body>
 
 </html>

@@ -19,25 +19,22 @@
     </header>
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
-        <div style="padding:1rem;">
-          <div class="toggle active">
-              <div class="toggle-handle"></div>
-          </div>
-          <br>
-          <div class="toggle">
-              <div class="toggle-handle"></div>
-          </div>
-        </div>
+        <form class="input-group">
+            <div class="input-row">
+                <label>Full name</label>
+                <input type="text" placeholder="Mister Ratchet">
+            </div>
+            <div class="input-row">
+                <label>Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+            </div>
+            <div class="input-row">
+                <label>Username</label>
+                <input type="text" placeholder="goRatchet">
+            </div>
+        </form>
     </div>
     <link rel="import" href="/widget/footdata/footdata.html?__inline">
-    <script>
-      pm.toggle(".toggle", function(obj, target) {
-        layer.open({
-          content:target,
-          time:1
-        });
-      });
-    </script>
 </body>
 
 </html>
