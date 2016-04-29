@@ -29,36 +29,17 @@
         <h1 class="title">标题栏</h1>
     </header>
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-    <div class="content" style="padding-left:20px;">
-        <br><br>
-        <button class="btn">Badge button
-            <span class="badge">1</span>
-        </button><br><br>
-        <button class="btn btn-primary">Badge button
-            <span class="badge badge-primary">1</span>
-        </button><br><br>
-        <button class="btn btn-positive">Badge button
-            <span class="badge badge-positive">1</span>
-        </button><br><br>
-        <button class="btn btn-negative">Badge button
-            <span class="badge badge-negative">1</span>
-        </button><br><br>
-
-        <button class="btn btn-outlined">Badge button
-            <span class="badge badge-inverted">1</span>
-        </button><br><br>
-        <button class="btn btn-outlined btn-primary">Badge button
-            <span class="badge badge-primary badge-inverted">1</span>
-        </button><br><br>
-        <button class="btn btn-outlined btn-positive">Badge button
-            <span class="badge badge-positive badge-inverted">1</span>
-        </button><br><br>
-        <button class="btn btn-outlined btn-negative">Badge button
-            <span class="badge badge-negative badge-inverted">1</span>
-        </button>
+    <div class="content">
+        <div style="padding:1rem;">
+          <div class="toggle active">
+              <div class="toggle-handle"></div>
+          </div>
+          <br>
+          <div class="toggle">
+              <div class="toggle-handle"></div>
+          </div>
+        </div>
     </div>
-
-
 <script src="/pkg/base.js"></script>
 <script>/*resourcemap*/
 </script>
@@ -67,7 +48,15 @@
 <script src="/lib/pm.toggle.js"></script>
 <script>
   pm.init();
-</script>
+
+
+      pm.toggle(".toggle", function(obj, target) {
+        layer.open({
+          content:target,
+          time:1
+        });
+      });
+    </script>
 <script type="text/javascript" charset="utf-8" src="http://192.168.1.43:8132/livereload.js"></script></body>
 
 </html>
