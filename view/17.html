@@ -48,8 +48,6 @@
           </li>
       </ul>
   </div>
-
-
 <script src="/pkg/base.js"></script>
 <script>/*resourcemap*/
 </script>
@@ -58,7 +56,15 @@
 <script src="/lib/pm.toggle.js"></script>
 <script>
   pm.init();
-</script>
+
+
+    pm.toggle(".toggle", function(obj, target) {
+      layer.open({
+        content:target,
+        time:1
+      });
+    });
+  </script>
 <script type="text/javascript" charset="utf-8" src="http://192.168.1.43:8132/livereload.js"></script></body>
 
 </html>
