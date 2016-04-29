@@ -1,12 +1,11 @@
-a,.btn-link{
-  color:#fff;
-}
-.btn{
-  color:#fff!important;
-}
 .bar{
   background-color: #f33;
-  &.btn-link{
-    color:#fff;
+}
+.header{
+  & > .userinfo{
+    width: 0.5rem;
+    height: 0.5rem;
+    background-size: contain;
+    background: url(./img/icon-personal.png) no-repeat;
   }
 }
