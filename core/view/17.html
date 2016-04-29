@@ -38,6 +38,14 @@
       </ul>
   </div>
   <link rel="import" href="/widget/footdata/footdata.html?__inline">
+  <script>
+    pm.toggle(".toggle", function(obj, target) {
+      layer.open({
+        content:target,
+        time:1
+      });
+    });
+  </script>
 </body>
 
 </html>
