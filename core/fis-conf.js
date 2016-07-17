@@ -3,8 +3,8 @@
 fis.set('project.ignore', ['*.bat', '*.rar', 'node_modules/**', 'fis-conf.js', "package.json"]);
 fis.set('project.fileType.text', 'es');
 
-fis.set('statics', ''); //static目录
-fis.set('url', '');
+fis.set('statics', 'demo'); //static目录
+fis.set('url', '');//带斜杠
 
 //FIS modjs模块化方案，您也可以选择amd/commonjs等
 fis.hook('commonjs', {
@@ -15,21 +15,18 @@ fis.hook('commonjs', {
 fis.match("**/*", {
         release: '${statics}/$&'
     })
-    .match(/.*\.(png|jpg)$/, {
-      optimizer: fis.plugin('png-compressor')
-    })
-    .match("**/*.ejs", {
-        parser: fis.plugin('ejs'),
-        isJsLike: true,
+    .match(/^\/site\/([^\/]+)\/(.*)\.(ejs)$/i, {
+        isHtmlLike: true,
         release: false
-    }).match('**/**.es', {
+    })
+    .match(/^\/(widget|site)\/(.*)\.(es)$/i, {
         parser: fis.plugin('babel-5.x', {
-             sourceMaps: true,//启用调试
+            sourceMaps: true, //启用调试
             // blacklist: ['regenerator'],
             stage: 3 //ES7不同阶段语法提案的转码规则（共有4个阶段）
         }),
         isMod: true,
-        id: "$0",
+        id: "$2",
         rExt: 'js'
     })
     //modules下面都是模块化资源
@@ -37,23 +34,26 @@ fis.match("**/*", {
         isMod: true,
         id: '$1', //id支持简写，去掉modules和.js后缀中间的部分
         release: '${statics}/$&',
-        url: '${url}/$&',
-        //optimizer: fis.plugin('uglify-js')
+        url: '${url}$&',
+        // optimizer: fis.plugin('uglify-js')
     })
-    //page下面的页面发布时去掉page文件夹
-    .match(/^\/view\/(.*)$/i, {
-        parser: fis.plugin('swigt'),
+    .match('**/*.less', { //编译less
+        parser: fis.plugin('less'),
+        rExt: '.css',
+        // optimizer: fis.plugin('optimizer-clean-css')
+    })
+    .match(/^\/views\/(.*)\.(html)$/i, {
         useCache: false,
-        release: '/$&'
+        release: '${statics}/$1',
     })
     .match(/^\/(widget|site)\/(.*)\.(js)$/i, {
         isMod: true,
         id: '$2',
-        url: '${url}/$&'
+        url: '${url}$&'
     })
-    .match(/^\/widget\/kindeditor-4.1.10\/(.*)\.(js)$/i, {
+    .match("/widget/kindeditor-4.1.10/**.js", {
         isMod: false,
-        url: '${url}/$&'
+        url: '${url}$&'
     })
     //less的mixin文件无需发布
     .match(/^(.*)mixin\.less$/i, {
@@ -64,7 +64,7 @@ fis.match("**/*", {
         isJsLike: true,
         release: false
     }).match("**/*", {
-        url: '${statics}$&'
+        url: '$&'
     })
     //页面模板不用编译缓存
     .match(/.*\.(html|jsp|tpl|vm|htm|asp|aspx|php)$/, {
@@ -79,15 +79,19 @@ fis.match('::packager', {
     postpackager: fis.plugin('loader', {
         resourceType: 'mod',
         obtainScript: true,
-        allInOne: false,
+        allInOne: {
+            ignore: ["/widget/kindeditor-4.1.10/kindeditor.js", "/widget/kindeditor-4.1.10/lang/zh_CN.js", '/lib/layer/layer.js','/lib/layer/need/layer.css'],
+            includeAsyncs: false //不包含异步依赖
+        },
         useInlineMap: true, // 资源映射表内嵌
     }),
     packager: fis.plugin('map', {
         useTrack: false,
-        'pkg/base.js': ['/lib/mod.js','/lib/zepto.min.js', '/lib/touch.js']
+        'pkg/base.js': ['/lib/*.js', '/modules/layer/*.js', '/modules/pizzalayer/*.js', '/modules/pizzatools/*.js'],
+        'pkg/base.css': ['/css/pizza.css', '/css/iconfont.css']
     }),
     spriter: fis.plugin('csssprites', {
         layout: 'matrix',
-        margin: '3'
+        margin: '15'
     })
 });

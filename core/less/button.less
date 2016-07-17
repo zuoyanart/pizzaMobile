@@ -1,0 +1,106 @@
+@import "var.less";
+
+.btn-border(@color:#ccc) {
+	border: 1px solid @color;
+}
+
+//button按钮生成工厂
+.btn-css(@bgcolor:@btn-primary-bgcolor) {
+	.btn();
+  color: @btn-color;
+  background-color: @bgcolor;
+  .btn-border(darken(@bgcolor,5%));
+
+  &.hover,&:hover {
+  	color:#fff;
+  	background-color: darken(@bgcolor, 10%)
+  }
+
+  &:active,&.active {
+    color: #fff;
+    background-color: darken(@bgcolor, 15%)
+  }
+}
+
+//具体样式
+//---------------------------------------------
+.btn(){
+  position: relative;
+  display: inline-block;
+  padding: 0 32rem/ @font-size-base;
+  margin: 0 32rem /@font-size-base 16rem/@font-size-base 0;
+	[data-dpr="1"] & {
+		font-size: 16px;
+	}
+	[data-dpr="2"] & {
+		font-size: 32px;
+	}
+	[data-dpr="3"] & {
+		font-size: 48px;
+	}
+	line-height:80rem / @font-size-base;
+  height:82rem / @font-size-base;
+  min-width: 180rem / @font-size-base;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: @btn-bgcolor;
+  border: 1px solid #ccc;
+  .border-radius(5px);
+  &:active,
+  &.active {
+    color: inherit; // Overriding the gloabl style for all anchors.
+    background-color: #ccc;
+  }
+
+  // Disabled styles & filled button active styles
+  &:disabled,
+  &.disabled {
+	  background-color: @bgcolor-place;
+	  border:@border;
+	  color:@color-date;
+	  &:hover{
+		  background-color: @bgcolor-place;
+		  color:@color-date;
+	  }
+  }
+	//icon
+	.@{ns}btn-icon {
+	    position: relative;
+	    text-align: center;
+	    white-space: nowrap;
+	    vertical-align: top;
+	    cursor: pointer;
+	    color: #fff;
+			margin: 10rem /@font-size-base;
+	}
+}
+
+.@{ns}btn-primary {
+  .btn-css(@btn-primary-bgcolor);
+}
+
+.@{ns}btn-success {
+   .btn-css(@bgcolor-success);
+}
+
+.@{ns}btn-info {
+ 	.btn-css(@bgcolor-info);
+}
+
+.@{ns}btn-warning {
+ 	.btn-css(@bgcolor-warning);
+}
+
+.@{ns}btn-danger {
+ 	.btn-css(@bgcolor-danger);
+}
+
+//icon btn
+
+
+// Block level buttons (full width buttons)
+.@{ns}btn-block {
+  display: block;
+  width: 100%;
+}
