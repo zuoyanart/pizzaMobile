@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="/widget/slider/slider.css">
 <div class="pz-slider">
   <ul class="slider-sliders">
-    <li class="active-left">
+    <li>
       <a href=""><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
     </li>
-    <li class="active">
+    <li>
       <a href=""><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg"></a>
     </li>
     <li>
@@ -13,9 +13,12 @@
     <li>
       <a href=""><img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"></a>
     </li>
+    <!-- <li>
+      <a href=""><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+    </li> -->
   </ul>
   <ol class="pz-slider-pager">
-    <li></li>
+    <li class="active"></li>
     <li></li>
     <li></li>
     <li></li>
@@ -23,7 +26,8 @@
 </div>
 <script type="text/javascript">
   var slider = require("slider/slider");
-  slider.init({
+  var slid = new slider();
+  slid.init({
 
   });
 </script>

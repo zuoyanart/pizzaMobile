@@ -87,7 +87,7 @@ fis.match('::packager', {
     }),
     packager: fis.plugin('map', {
         useTrack: false,
-        'pkg/base.js': ['/lib/*.js', '/modules/layer/*.js', '/modules/pizzalayer/*.js', '/modules/pizzatools/*.js'],
+        'pkg/base.js': ["/lib/zepto.min.js",'/lib/*.js'],
         'pkg/base.css': ['/less/pizza.touch.less', '/css/font-awesome.css',"/css/flexble.css"]
     }),
     spriter: fis.plugin('csssprites', {
