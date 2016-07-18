@@ -1,0 +1,24 @@
+.pz-slider {
+  width: 100%;
+  height: 5.6rem;
+  overflow: hidden;
+}
+.pz-slider ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.pz-slider ul li {
+  position: relative;
+  display: none;
+}
+.pz-slider ul li.active {
+  display: block;
+}
+.pz-slider ul li.active-left {
+  display: block;
+  float: left;
+}
+.pz-slider ul li img {
+  width: 100%;
+}
