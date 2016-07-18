@@ -4,16 +4,18 @@
   overflow: hidden;
 }
 .pz-slider ul {
-  width: 100%;
+  width: 200%;
   height: 100%;
   position: relative;
 }
 .pz-slider ul li {
+  width: 50%;
   position: relative;
   display: none;
 }
 .pz-slider ul li.active {
   display: block;
+  float: left;
 }
 .pz-slider ul li.active-left {
   display: block;
