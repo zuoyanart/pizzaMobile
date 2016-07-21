@@ -1,6 +1,7 @@
 @import "var.less";
+@import "flex.less";
 .input-focus(@color:@input-shadow-color) {
-    box-shadow: 0 0 8px @color;
+    // box-shadow: 0 0 8px @color;
 }
 input[type="color"],
 input[type="date"],
@@ -24,7 +25,7 @@ textarea {
     padding: 0 5px;
     background-color: @input-bg;
     border: @border;
-    border-radius:3px;
+    border-radius: 3px;
     outline: none;
     resize: none;
     &:focus {
@@ -61,7 +62,6 @@ textarea {
         .input-focus();
     }
 }
-
 input[type="checkbox"],
 input[type="radio"] {
     margin-right: 5rem/@font-size-base;
@@ -70,56 +70,60 @@ input[type="radio"] {
     height: 50rem/@font-size-base;
     border-radius: 50%;
 }
-
 //单行显示
-form,.form {
+.form,
+form {
     & > div {
-        position: relative;
-        margin-top: 20rem/@font-size-base ;
-        padding: 1px 0 1px 200rem/@font-size-base;
-        border-bottom: 1px solid #c8c7cc;
+        width: 100%;
+        .flex-vertical();
+        padding: 10rem/@font-size-base 0;
+        border-bottom: 1px solid #ddd;
         [data-dpr="1"] & {
-          font-size: 16px;
+            font-size: 16px;
         }
         [data-dpr="2"] & {
-          font-size: 32px;
+            font-size: 32px;
         }
         [data-dpr="3"] & {
-          font-size: 46px;
+            font-size: 46px;
         }
-        & > label {
-            display: inline-block;
-            width: 200rem/@font-size-base;
-            position: absolute;
-            left: 0;
+        div {
+            width: 0;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            height: 100%;
+        }
+        input[type=date],
+        input[type=number],
+        input[type=password],
+        input[type=text],
+        select {
+            border: none;
+            width: 100%;
             text-align: left;
-            padding-right: 20px;
-            margin-bottom: 5px;
-            line-height: @input-height;
-            &+input[type=date],&+input[type=text],&+input[type=password],&+input[type=number],&+select{
-              border:none;
-              &:focus{
-              box-shadow: none;
-              }
+            &:focus {
+                box-shadow: 0;
             }
         }
-    }
-    & > div:first-child {
-        margin-top: 0;
+        label {
+            width: 150rem/@font-size-base;
+            height: 100%;
+            display: inline-block;
+        }
+        i{
+          height: 100%;
+          padding: 10px;
+          background: #000;
+          background: #eee;
+        }
     }
     & > div:last-child {
         padding-left: 0;
-        text-align: center;
-    }
-    & >.form-group{
-      border:none;
-      padding-left: 0;
-      & > label{
-        position: relative;
-        &+input[type=date],&+input[type=text],&+input[type=password],&+input[type=number],&+select{
-          border:@border;
+        .flex-vertical-center();
+        button {
+            margin-bottom: 0;
         }
-      }
     }
 }
 
