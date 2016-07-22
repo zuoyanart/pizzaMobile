@@ -1,15 +1,33 @@
 @import "var.less";
-@import "flex.less";
+@import "mixin.less";
+.body{
+  -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+   position: relative;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   .flex-cont();
+
+}
 .@{ns}bar {
     width: 100%;
-    height: 88rem / @font-size-base;
+    .px2rem(height,88);
     background-color: @bgcolor-place;
     color:#fff;
-    .flex-vertical-center();
     h2.title{
       text-align: center;
       font-weight: 700;
     }
+}
+.@{ns}content{
+  height: auto;
+  background-color: #ccc;
+  width: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling:touch;
 }
 
 .@{ns}main{
