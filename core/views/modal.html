@@ -3,14 +3,12 @@
 
 <head>
   <title>Pizza mobile</title>
-  <link rel="import" href="/widget/meta/meta.html?__inline">
+  <link rel="import" href="/widget/touch-meta/meta.html?__inline">
   <link rel="stylesheet" href="/site/index/index.less">
 </head>
 
 <body>
-  <header class="pz-bar">
-    <h2 class="title">Pizza UI Touch</h2>
-  </header>
+  <link rel="import" href="/widget/touch-header/header.html?__inline">
   <div class="pz-main">
     <h2 class="h2">提示框</h2>
     <button class="pz-btn-primary" id="msg">提示框</button>
@@ -19,9 +17,7 @@
     <button class="pz-btn-success" id="msg3">页面层</button>
     <button class="pz-btn-info" id="msg4">加载</button>
   </div>
-  <footer>
-    asdasd
-  </footer>
+  <link rel="import" href="/widget/touch-footer/footer.html?__inline">
   <script type="text/javascript">
     $("#msg").click(function() {
       layer.open({

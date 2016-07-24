@@ -10,6 +10,10 @@
     @{name}: @px / @font-size-base * 1rem;
 }
 
+.px2rem2(@name, @px, @px1) {
+    @{name}: @px / @font-size-base * 1rem  @px1 / @font-size-base * 1rem;
+}
+
 /**flex 父元素定义 **/
 .flex-cont() {
 	//父容器
@@ -25,6 +29,13 @@
 	-webkit-align-items: center;
 	align-items: center;
 }
+.flex-top {
+	.flex-cont();
+	/*定义子元素垂直居中*/
+	-webkit-box-align: flex-start;
+	-webkit-align-items: flex-start;
+	align-items: flex-start;
+}
 	//子元素垂直居中,横向也居中
 .flex-vertical-center {
 	.flex-cont();
@@ -38,11 +49,12 @@
 	justify-content: center;
 }
 
+
 /**flex 子元素定义 **/
-.flex-item() {//实际是flex为1的元素的父元素定义，子元素width要定义为100%
+.flex-item(@num:1) {//实际是flex为1的元素的父元素定义，子元素width要定义为100%
 	//子元素
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	flex: 1;
+	-webkit-box-flex: @num;
+	-webkit-flex: @num;
+	flex: @num;
 	width: 0%;
 }

@@ -3,16 +3,15 @@
 
 <head>
   <title>pizza-mobile</title>
-  <link rel="import" href="/widget/meta/meta.html?__inline">
+  <link rel="import" href="/widget/touch-meta/meta.html?__inline">
   <link rel="stylesheet" href="/site/index/index.less">
 </head>
 
 <body>
-  <header class="pz-bar">
-    <h2 class="title">Pizza UI Touch</h2>
-  </header>
+  <link rel="import" href="/widget/touch-header/header.html?__inline">
   <div class="pz-main">
     <h2 class="h2"><label></label>基础样式</h2>
+    <div class="bgc">
     <form action="">
       <div>
         <label for="">用户名</label>
@@ -42,7 +41,9 @@
         <button class="pz-btn-danger">取消</button>
       </div>
     </form>
+    </div>
     <h2 class="h2"><label></label>图标样式</h2>
+    <div class="bgc">
     <form action="">
       <div>
         <label class="icon icon-user"></label>
@@ -57,10 +58,9 @@
         <button class="pz-btn-danger">取消</button>
       </div>
     </form>
+    </div>
   </div>
-  <footer>
-    asdasd
-  </footer>
+  <link rel="import" href="/widget/touch-footer/footer.html?__inline">
   <script type="text/javascript">
     lib.flexible.makeGridMode("750-12");
   </script>

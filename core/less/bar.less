@@ -1,30 +1,66 @@
 @import "var.less";
 @import "mixin.less";
-.body{
-  -webkit-box-orient: vertical;
-   -webkit-box-direction: normal;
-   -webkit-flex-direction: column;
-   flex-direction: column;
-   position: relative;
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
-   .flex-cont();
 
-}
-.@{ns}bar {
+.@{ns}header {
     width: 100%;
     .px2rem(height,88);
+    .flex-vertical-center();
     background-color: @bgcolor-place;
     color:#fff;
+    .px2rem2(padding,0,20);
+    &.fixed{
+      position: fixed;
+      top: 0;
+      z-index: 1000000;
+      & + div.@{ns}main{
+      .px2rem(margin-top,88);
+      .px2rem(margin-bottom,88);
+      }
+    }
+    a{
+      color:#fff;
+    }
+    h2.title{
+      text-align: center;
+      font-weight: 700;
+      .flex-item();
+
+    }
+    [class*="icon-"]{
+      font-size: 24px;
+      [data-dpr="2"] & {
+        font-size: 40px;
+      }
+      [data-dpr="3"] & {
+        font-size: 56px;
+      }
+    }
+}
+
+.@{ns}footer {
+    width: 100%;
+    .px2rem(height,88);
+    .flex-vertical-center();
+    background-color: @bgcolor-place;
+    color:#fff;
+    &.fixed{
+      position: fixed;
+      bottom: 0;
+      z-index: 1000000;
+      & + div.@{ns}main{
+      .px2rem(margin-top,88);
+      .px2rem(margin-bottom,88);
+      }
+    }
     h2.title{
       text-align: center;
       font-weight: 700;
     }
 }
-.@{ns}content{
+
+
+.@{ns}main{
   height: auto;
-  background-color: #ccc;
   width: 100%;
   overflow: scroll;
   -webkit-overflow-scrolling:touch;

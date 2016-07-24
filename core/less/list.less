@@ -1,0 +1,110 @@
+@import "var.less";
+@import "mixin.less";
+
+.@{ns}list{
+  width: 100%;
+  min-height: 20px;
+  li{
+    .px2rem(height,88);
+    .px2rem2(padding,0,30);
+    .flex-vertical();
+    border:1px solid #e6e6e6;
+    border-width: 0 0 1px 0;
+    &:first-child{
+      border-width: 1px 0;
+    }
+    h3{
+      .flex-item();
+      [data-dpr="1"] & {
+        font-size: 16px;
+      }
+      [data-dpr="2"] & {
+        font-size: 30px;
+      }
+      [data-dpr="3"] & {
+        font-size: 46px;
+      }
+    }
+    [class*="icon-"]{
+      [data-dpr="1"] & {
+        font-size: 20px;
+      }
+      [data-dpr="2"] & {
+        font-size: 30px;
+      }
+      [data-dpr="3"] & {
+        font-size: 56px;
+      }
+    }
+  }
+}
+
+.@{ns}medialist{
+  width: 100%;
+  min-height: 20px;
+  li{
+    .px2rem(height,154);
+    .px2rem2(padding,20,30);
+    .flex-vertical();
+    border:1px solid #e6e6e6;
+    border-width: 0 0 1px 0;
+    &:first-child{
+      border-width: 1px 0;
+    }
+    & > a{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      .flex-vertical();
+    }
+    div.img{
+      display: inline-block;
+      .px2rem(width,96);
+      .px2rem(height,96);
+      font-size: 0;
+      img{
+        width: 100%;
+      }
+    }
+    div.des{
+      height: 100%;
+      .flex-item();
+      .px2rem(margin-left,20);
+      h3{
+        width: 100%;
+        [data-dpr="1"] & {
+          font-size: 16px;
+        }
+        [data-dpr="2"] & {
+          font-size: 30px;
+        }
+        [data-dpr="3"] & {
+          font-size: 46px;
+        }
+      }
+      p{
+        width: 100%;
+        [data-dpr="1"] & {
+          font-size: 16px;
+        }
+        [data-dpr="2"] & {
+          font-size: 30px;
+        }
+        [data-dpr="3"] & {
+          font-size: 46px;
+        }
+      }
+    }
+    [class*="icon-"]{
+      [data-dpr="1"] & {
+        font-size: 20px;
+      }
+      [data-dpr="2"] & {
+        font-size: 30px;
+      }
+      [data-dpr="3"] & {
+        font-size: 56px;
+      }
+    }
+  }
+}

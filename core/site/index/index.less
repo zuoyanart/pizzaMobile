@@ -1,5 +1,5 @@
 @import "../../less/var.less";
-@import "../../less/flex.less";
+@import "../../less/mixin.less";
 .list{
   min-height: 100px;
   li {
@@ -14,23 +14,51 @@
       padding: 0 15rem / @font-size-base 0 30rem/@font-size-base;
       line-height: 88rem / @font-size-base;
       color:#000;
+      [data-dpr="1"] & {
+        font-size: 14px;
+      }
+      [data-dpr="2"] & {
+        font-size: 26px;
+      }
+      [data-dpr="3"] & {
+        font-size: 40px;
+      }
     }
     i{
       position: absolute;
       right: 30rem / @font-size-base;
       font-size: 1.5em;
       top: 25rem/@font-size-base;
+      [data-dpr="1"] & {
+        font-size: 18px;
+      }
+      [data-dpr="2"] & {
+        font-size: 24px;
+      }
+      [data-dpr="3"] & {
+        font-size: 32px;
+      }
     }
   }
 }
 
 .pz-main{
   padding: 0 0rem/@font-size-base;
+  background-color: #f4f4f4;
   .h2{
     margin: 20rem/@font-size-base;
     padding:10px 10px;
     border-bottom: 1px solid #ccc;
     .flex-vertical();
+    [data-dpr="1"] & {
+      font-size: 14px;
+    }
+    [data-dpr="2"] & {
+      font-size: 30px;
+    }
+    [data-dpr="3"] & {
+      font-size: 46px;
+    }
     label{
       width: 10rem / @font-size-base;
       height: 30rem /@font-size-base;
@@ -38,5 +66,9 @@
       background-color: @bgcolor-info;
       margin-right: 10px;
     }
+  }
+  div.bgc{
+    background-color: #fff;
+    .px2rem2(padding,20,20);
   }
 }
