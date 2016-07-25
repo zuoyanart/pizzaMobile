@@ -1,0 +1,63 @@
+@import "var.less";
+@import "mixin.less";
+.@{ns}tabs {
+    width: 100%;
+    min-height: 50px;
+    .@{ns}tabs-menu {
+        width: 100%;
+        .px2rem(height,74);
+        .flex-cont();
+        button,div {
+            .flex-item();
+            .px2rem(line-height, 74);
+            .px2rem(height, 74);
+            text-align: center;
+            overflow: hidden;
+            border: 1px solid @bgcolor-info;
+            border-width: 1px 1px 1px 0;
+            background-color: #fff;
+            [data-dpr="1"] & {
+                font-size: 16px;
+            }
+            [data-dpr="2"] & {
+                font-size: 28px;
+            }
+            [data-dpr="3"] & {
+                font-size: 46px;
+            }
+            &:first-child {
+                border-width: 1px;
+            }
+            &.active {
+                background-color: @bgcolor-info;
+                color: #fff;
+            }
+        }
+    }
+    .@{ns}tabs-body {
+        width: 100%;
+        min-height: 100px;
+        position: relative;
+        overflow: hidden;
+        &>div{
+         .px2rem(padding,30);
+          position: absolute;
+          width: 100%;
+          min-height: 100px;
+          [data-dpr="1"] & {
+            font-size: 16px;
+          }
+          [data-dpr="2"] & {
+            font-size: 34px;
+          }
+          [data-dpr="3"] & {
+            font-size: 46px;
+          }
+          line-height: 1.5;
+          right:-120%;
+          &:first-child{
+            left:-120%;
+          }
+        }
+    }
+}

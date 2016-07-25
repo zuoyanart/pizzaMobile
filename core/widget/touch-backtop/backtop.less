@@ -1,0 +1,20 @@
+@import "../../less/var.less";
+@import "../../less/mixin.less";
+.@{ns}backtop{
+  .flex-vertical-center();
+  .px2rem(width, 96);
+  .px2rem(height, 96);
+  position: fixed;
+  z-index:99999999;
+  .px2rem(right,20);
+  .px2rem(bottom,140);
+  background-color: #eee;
+  border-radius: 50%;
+  text-align: center;
+  [class*="icon-"] {
+    vertical-align: middle;
+    [data-dpr="2"] & {
+      font-size: 50px;
+    }
+  }
+}

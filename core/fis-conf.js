@@ -19,7 +19,7 @@ fis.match("**/*", {
         isHtmlLike: true,
         release: false
     })
-    .match(/^\/(widget|site)\/(.*)\.(es)$/i, {
+    .match(/^\/(widget|site|modules)\/(.*)\.(es)$/i, {
         parser: fis.plugin('babel-5.x', {
             sourceMaps: true, //启用调试
             // blacklist: ['regenerator'],
@@ -30,7 +30,7 @@ fis.match("**/*", {
         rExt: 'js'
     })
     //modules下面都是模块化资源
-    .match(/^\/modules\/([^\/]+)\/(.*)\.(js)$/i, {
+    .match(/^\/modules\/([^\/]+)\/(.*)\.(js|es)$/i, {
         isMod: true,
         id: '$1', //id支持简写，去掉modules和.js后缀中间的部分
         release: '${statics}/$&',
